@@ -39,9 +39,10 @@ if (saved('sdm-theme') === 'dark') h.setAttribute('data-theme', 'dark');
 <a class="skip" href="#main">Skip to content / 本文へ</a>
 <header class="site-header">
 <div class="wrap">
-<a class="brand" href="#top" aria-label="SCALE-SDM Tutorial — top">
+<a class="brand" href="#top" aria-label="SCALE-SDM Tutorial / SCALE-SDM 講習会 — top">
 <img class="brand-mark" src="assets/img/favicon.svg" alt="" width="30" height="30">
-<span class="brand-text">SCALE-SDM Tutorial<small id="brand-sub">2026 · Kobe &amp; Online</small></span>
+<span class="brand-name" aria-hidden="true">SCALE-SDM</span>
+<span class="brand-tag" aria-hidden="true"><span>Tutorial</span><span lang="ja">講習会</span></span>
 </a>
 <nav class="nav" id="nav" aria-label="Sections">
 <a href="#about"><span class="en">About</span><span class="ja">概要</span></a>
@@ -52,6 +53,7 @@ if (saved('sdm-theme') === 'dark') h.setAttribute('data-theme', 'dark');
 <a href="#prepare"><span class="en">Prepare</span><span class="ja">事前準備</span></a>
 <a href="#venue"><span class="en">Venue</span><span class="ja">会場</span></a>
 <a href="#faq"><span class="en">FAQ</span><span class="ja">よくある質問</span></a>
+<button type="button" class="nav-theme" data-theme-toggle aria-pressed="false"><span class="en">Dark mode</span><span class="ja">ダークモード</span></button>
 </nav>
 <div class="header-tools">
 <div class="lang-switch" role="group" aria-label="Language / 表示言語">
