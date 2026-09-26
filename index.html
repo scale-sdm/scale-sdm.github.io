@@ -19,7 +19,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600;700;800&family=Noto+Sans+JP:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/style.css?v=f69c2cdd8b">
 <script>
 (function () {
 function saved(k) { try { return JSON.parse(localStorage.getItem(k)); } catch (e) { return null; } }
@@ -30,10 +30,10 @@ if (m === 'ja') h.setAttribute('lang', 'ja');
 if (saved('sdm-theme') === 'dark') h.setAttribute('data-theme', 'dark');
 })();
 </script>
-<script src="data/site.js" defer></script>
-<script src="data/registration-fields.js" defer></script>
-<script src="assets/js/app.js" defer></script>
-<script src="assets/js/droplets.js" defer></script>
+<script src="data/site.js?v=5016617f63" defer></script>
+<script src="data/registration-fields.js?v=14fe799013" defer></script>
+<script src="assets/js/app.js?v=21a13dd204" defer></script>
+<script src="assets/js/droplets.js?v=9fd6e6a9ae" defer></script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content / 本文へ</a>
@@ -48,7 +48,6 @@ if (saved('sdm-theme') === 'dark') h.setAttribute('data-theme', 'dark');
 <a href="#about"><span class="en">About</span><span class="ja">概要</span></a>
 <a href="#program"><span class="en">Program</span><span class="ja">プログラム</span></a>
 <a href="#lecturers"><span class="en">Lecturers</span><span class="ja">講師</span></a>
-<a href="#hands-on"><span class="en">Hands-on</span><span class="ja">実習</span></a>
 <a href="#register"><span class="en">Register</span><span class="ja">参加登録</span></a>
 <a href="#prepare"><span class="en">Prepare</span><span class="ja">事前準備</span></a>
 <a href="#venue"><span class="en">Venue</span><span class="ja">会場</span></a>
@@ -156,21 +155,10 @@ if (saved('sdm-theme') === 'dark') h.setAttribute('data-theme', 'dark');
 <div id="people"></div>
 </div>
 </section>
-<section class="section alt" id="hands-on" aria-labelledby="handson-h">
+<section class="section alt" id="register" aria-labelledby="register-h">
 <div class="wrap">
 <div class="section-head">
-<div class="eyebrow">04 · Day 2</div>
-<h2 id="handson-h" class="bi h-bi"><span class="en">Bring your own case</span><span class="ja">自分の研究ケースを持ち込もう</span></h2>
-<div class="lead" id="handson-lead"></div>
-</div>
-<ol class="steps" id="steps"></ol>
-<div class="samples" id="samples"></div>
-</div>
-</section>
-<section class="section" id="register" aria-labelledby="register-h">
-<div class="wrap">
-<div class="section-head">
-<div class="eyebrow">05 · Registration</div>
+<div class="eyebrow">04 · Registration</div>
 <h2 id="register-h" class="bi h-bi"><span class="en">Register</span><span class="ja">参加登録</span></h2>
 <div class="lead" id="register-lead"></div>
 </div>
@@ -180,10 +168,10 @@ if (saved('sdm-theme') === 'dark') h.setAttribute('data-theme', 'dark');
 </div>
 </div>
 </section>
-<section class="section alt" id="prepare" aria-labelledby="prepare-h">
+<section class="section" id="prepare" aria-labelledby="prepare-h">
 <div class="wrap">
 <div class="section-head">
-<div class="eyebrow">06 · Prepare</div>
+<div class="eyebrow">05 · Prepare</div>
 <h2 id="prepare-h" class="bi h-bi"><span class="en">Before you come</span><span class="ja">事前準備</span></h2>
 </div>
 <div class="grid-2">
@@ -199,28 +187,28 @@ if (saved('sdm-theme') === 'dark') h.setAttribute('data-theme', 'dark');
 </div>
 </div>
 </section>
-<section class="section" id="venue" aria-labelledby="venue-h">
+<section class="section alt" id="venue" aria-labelledby="venue-h">
 <div class="wrap">
 <div class="section-head">
-<div class="eyebrow">07 · Venue</div>
+<div class="eyebrow">06 · Venue</div>
 <h2 id="venue-h" class="bi h-bi"><span class="en">Venue &amp; access</span><span class="ja">会場・アクセス</span></h2>
 </div>
 <div class="venue-grid" id="venue-body"></div>
 </div>
 </section>
-<section class="section alt" id="faq" aria-labelledby="faq-h">
+<section class="section" id="faq" aria-labelledby="faq-h">
 <div class="wrap">
 <div class="section-head">
-<div class="eyebrow">08 · FAQ</div>
+<div class="eyebrow">07 · FAQ</div>
 <h2 id="faq-h" class="bi h-bi"><span class="en">Frequently asked questions</span><span class="ja">よくある質問</span></h2>
 </div>
 <div class="faq" id="faq-body"></div>
 </div>
 </section>
-<section class="section" id="editions" aria-labelledby="editions-h">
+<section class="section alt" id="editions" aria-labelledby="editions-h">
 <div class="wrap">
 <div class="section-head">
-<div class="eyebrow">09 · Editions</div>
+<div class="eyebrow">08 · Editions</div>
 <h2 id="editions-h" class="bi h-bi"><span class="en">All editions</span><span class="ja">これまでの開催</span></h2>
 </div>
 <div class="archive" id="archive"></div>
