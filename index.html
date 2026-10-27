@@ -3,15 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>SCALE-SDM Tutorial 2026 — 2nd Hands-on Tutorial | SCALE-SDM 講習会</title>
-<meta name="description" content="2nd SCALE-SDM Hands-on Tutorial, 26–27 October 2026, University of Hyogo (Kobe) and online. Day 1 lectures, Day 2 hands-on with your own case. 第2回 SCALE-SDM ハンズオン講習会（2026年10月26日・27日、兵庫県立大学（神戸）・オンライン併用）">
+<title>SCALE-SDM Hands-on Tutorial | SCALE-SDM ハンズオン講習会</title>
+<meta name="description" content="Hands-on tutorials on SCALE-SDM, the super-droplet cloud model, by the Shima Research Group, University of Hyogo. The 3rd edition is to be announced. SCALE-SDM ハンズオン講習会（兵庫県立大学 島研究室）。第3回は日程未定です。">
 <meta name="theme-color" content="#0b2344">
 <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
 <meta property="og:type" content="website">
-<meta property="og:title" content="2nd SCALE-SDM Hands-on Tutorial · 26–27 Oct 2026">
-<meta property="og:description" content="Two days in Kobe and online: lectures on idealized and real-case SCALE-SDM simulations, then hands-on help with your own case. 第2回 SCALE-SDM ハンズオン講習会">
+<meta property="og:title" content="SCALE-SDM Hands-on Tutorial · 3rd edition to be announced">
+<meta property="og:description" content="Learn to simulate clouds particle by particle with SCALE-SDM. Past editions: 2025 and 2026 (Kobe and online). SCALE-SDM ハンズオン講習会">
 <meta property="og:url" content="https://scale-sdm.github.io/">
-<meta property="og:image" content="https://scale-sdm.github.io/assets/img/og-image.png">
+<meta property="og:image" content="https://scale-sdm.github.io/assets/img/og-home.png">
 <link rel="canonical" href="https://scale-sdm.github.io/">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -20,6 +20,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600;700;800&family=Noto+Sans+JP:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/style.css?v=9907ea82d4">
+<link rel="stylesheet" href="assets/css/home.css?v=05c7b6ec89">
 <script>
 (function () {
 function saved(k) { try { return JSON.parse(localStorage.getItem(k)); } catch (e) { return null; } }
@@ -31,8 +32,7 @@ if (saved('sdm-theme') === 'dark') h.setAttribute('data-theme', 'dark');
 })();
 </script>
 <script src="data/site.js?v=f8375d1331" defer></script>
-<script src="data/registration-fields.js?v=14fe799013" defer></script>
-<script src="assets/js/app.js?v=cb2d4889c1" defer></script>
+<script src="assets/js/home.js?v=a508f79c43" defer></script>
 <script src="assets/js/droplets.js?v=9fd6e6a9ae" defer></script>
 </head>
 <body>
@@ -45,13 +45,10 @@ if (saved('sdm-theme') === 'dark') h.setAttribute('data-theme', 'dark');
 <span class="brand-tag" aria-hidden="true"><span>Tutorial</span><span lang="ja">講習会</span></span>
 </a>
 <nav class="nav" id="nav" aria-label="Sections">
-<a href="#about"><span class="en">About</span><span class="ja">概要</span></a>
-<a href="#program"><span class="en">Program</span><span class="ja">プログラム</span></a>
-<a href="#organizers"><span class="en">Organizers</span><span class="ja">世話人</span></a>
-<a href="#register"><span class="en">Register</span><span class="ja">参加登録</span></a>
-<a href="#prepare"><span class="en">Prepare</span><span class="ja">事前準備</span></a>
-<a href="#venue"><span class="en">Venue</span><span class="ja">会場</span></a>
-<a href="#faq"><span class="en">FAQ</span><span class="ja">よくある質問</span></a>
+<a href="#editions"><span class="en">Editions</span><span class="ja">開催一覧</span></a>
+<a href="#play"><span class="en">Play</span><span class="ja">遊んでみる</span></a>
+<a href="#learn"><span class="en">Learn</span><span class="ja">学ぶ</span></a>
+<a href="#ideas"><span class="en">Ideas</span><span class="ja">ご意見</span></a>
 <button type="button" class="nav-theme" data-theme-toggle aria-pressed="false"><span class="en">Dark mode</span><span class="ja">ダークモード</span></button>
 </nav>
 <div class="header-tools">
@@ -74,13 +71,25 @@ if (saved('sdm-theme') === 'dark') h.setAttribute('data-theme', 'dark');
 <section class="hero" id="top" aria-labelledby="hero-title">
 <canvas id="hero-canvas" aria-hidden="true"></canvas>
 <div class="wrap">
-<div class="hero-edition" id="hero-edition"></div>
-<h1 id="hero-title" class="bi"></h1>
-<div class="hero-lead" id="hero-lead"></div>
-<div class="hero-badges" id="hero-badges"></div>
-<div class="hero-cta" id="hero-cta"></div>
+<div class="hero-edition"><span class="bi-inline"><span class="en">Hands-on tutorial series</span><span class="ja">ハンズオン講習会シリーズ</span></span></div>
+<h1 id="hero-title" class="bi"><span class="en">SCALE-SDM Hands-on Tutorial</span><span class="ja">SCALE-SDM ハンズオン講習会</span></h1>
+<div class="hero-lead bi">
+<span class="en">Learn to simulate clouds particle by particle: lectures from idealized to real cases, then hands-on help with your own case.</span>
+<span class="ja">雲を粒子で表す数値シミュレーションを学ぶ講習会です。理想実験から現実事例までの講義と、各自のケースを用いた実習を行います。</span>
+</div>
+<div class="next-tba" role="status">
+<span class="next-dot" aria-hidden="true"></span>
+<span class="bi">
+<span class="en"><strong>3rd edition: to be announced.</strong> Dates will be posted here.</span>
+<span class="ja"><strong>第3回：日程未定</strong>（決まり次第このページでお知らせします）</span>
+</span>
+</div>
+<div class="hero-cta">
+<a class="btn btn-primary" href="#editions"><span class="bi-inline"><span class="en">Past editions</span><span class="ja">これまでの開催</span></span></a>
+<a class="btn btn-ghost" href="#ideas" data-mail-subject="SCALE-SDM tutorial: idea for the 3rd edition"><span class="bi-inline"><span class="en">Send us an idea</span><span class="ja">ご意見を送る</span></span></a>
+</div>
 <div class="hero-foot">
-<div id="countdown-wrap"></div>
+<div></div>
 <div class="hero-legend">
 <button class="icon-btn" id="hero-toggle" type="button" aria-pressed="false" aria-label="Pause animation / アニメーションを一時停止">
 <svg class="i-pause" width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg>
@@ -94,142 +103,143 @@ if (saved('sdm-theme') === 'dark') h.setAttribute('data-theme', 'dark');
 </div>
 </div>
 </section>
-<div class="facts"><div class="wrap"><div class="facts-grid" id="facts"></div><div class="news" id="news"></div></div></div>
-<section class="section" id="about" aria-labelledby="about-h">
+<div class="thanks">
+<div class="wrap thanks-row">
+<p class="bi">
+<span class="en">Thank you to everyone who joined the <a href="2026/">2nd edition</a> in Kobe and online on 26–27 October 2026.</span>
+<span class="ja">10月26日・27日に神戸とオンラインで開催した<a href="2026/">第2回</a>にご参加いただいた皆さま、ありがとうございました。</span>
+</p>
+<dl class="stats">
+<div><dt><span class="bi-inline"><span class="en">Editions</span><span class="ja">開催回数</span></span></dt><dd>2</dd></div>
+<div><dt><span class="bi-inline"><span class="en">Registered in 2026</span><span class="ja">2026年の登録者</span></span></dt><dd>21</dd></div>
+<div><dt><span class="bi-inline"><span class="en">Format</span><span class="ja">形式</span></span></dt><dd><span class="bi-inline"><span class="en">Kobe + Zoom</span><span class="ja">神戸＋Zoom</span></span></dd></div>
+</dl>
+</div>
+</div>
+<section class="section" id="editions" aria-labelledby="editions-h">
 <div class="wrap">
 <div class="section-head">
-<div class="eyebrow">01 · About</div>
-<h2 id="about-h" class="bi h-bi"><span class="en">What you will learn</span><span class="ja">この講習会で学べること</span></h2>
+<div class="eyebrow">01 · Editions</div>
+<h2 id="editions-h" class="bi h-bi"><span class="en">Editions</span><span class="ja">開催一覧</span></h2>
 </div>
-<div class="about-grid">
+<ol class="ed-list">
+<li class="ed-card ed-next">
+<div class="ed-num">3</div>
+<div class="ed-body">
+<h3 class="bi"><span class="en">3rd SCALE-SDM Hands-on Tutorial</span><span class="ja">第3回 SCALE-SDM ハンズオン講習会</span></h3>
+<p class="ed-meta"><span class="tag tag-tba"><span class="bi-inline"><span class="en">To be announced</span><span class="ja">日程未定</span></span></span></p>
+<p class="bi ed-text">
+<span class="en">Topics, dates and format are open. Tell us what you would like to learn.</span>
+<span class="ja">内容・日程・形式は未定です。学びたいことをぜひお知らせください。</span>
+</p>
+</div>
+<a class="btn btn-outline ed-go" href="#ideas"><span class="bi-inline"><span class="en">Suggest a topic</span><span class="ja">テーマを提案</span></span></a>
+</li>
+<li class="ed-card">
+<div class="ed-num">2</div>
+<div class="ed-body">
+<h3 class="bi"><span class="en">2nd SCALE-SDM Hands-on Tutorial</span><span class="ja">第2回 SCALE-SDM ハンズオン講習会</span></h3>
+<p class="ed-meta"><span class="bi-inline"><span class="en">26–27 Oct 2026 · 2 days · Kobe + Zoom</span><span class="ja">2026年10月26日・27日 · 2日間 · 神戸＋Zoom</span></span></p>
+<p class="bi ed-text">
+<span class="en">Day 1 lectures (SCALE-RM, idealized and real cases, the wiki, TPHT, SPRINTARS, seeding); Day 2 hands-on with each participant's own case.</span>
+<span class="ja">1日目は講義（SCALE-RM、理想実験・現実事例、wiki、TPHT、SPRINTARS、シーディング）、2日目は各自のケースで実習。</span>
+</p>
+</div>
+<a class="btn btn-outline ed-go" href="2026/"><span class="bi-inline"><span class="en">Open the page</span><span class="ja">ページを開く</span></span></a>
+</li>
+<li class="ed-card">
+<div class="ed-num">1</div>
+<div class="ed-body">
+<h3 class="bi"><span class="en">1st SCALE-SDM Hands-on Tutorial</span><span class="ja">第1回 SCALE-SDM ハンズオン講習会</span></h3>
+<p class="ed-meta"><span class="bi-inline"><span class="en">15 Apr 2025 · 1 day · Kobe + Zoom</span><span class="ja">2025年4月15日 · 1日間 · 神戸＋Zoom</span></span></p>
+<p class="bi ed-text">
+<span class="en">SCALE overview, the Super-Droplet Method, idealized 2D/3D runs and a real case.</span>
+<span class="ja">SCALE の概要、超水滴法、2次元・3次元理想実験、現実事例。</span>
+</p>
+</div>
+<a class="btn btn-outline ed-go" href="2025/"><span class="bi-inline"><span class="en">See the program</span><span class="ja">プログラム</span></span></a>
+</li>
+</ol>
+</div>
+</section>
+<section class="section alt" id="play" aria-labelledby="play-h">
+<div class="wrap">
+<div class="section-head">
+<div class="eyebrow">02 · Play</div>
+<h2 id="play-h" class="bi h-bi"><span class="en">Collide two super-droplets</span><span class="ja">2つの超水滴を衝突させてみる</span></h2>
+<p class="bi section-sub">
+<span class="en">In SDM, a pair of super-droplets in the same grid cell collides with some probability. When it does, this is the update (Shima et al., 2009). Each dot below is one real droplet; a box is one super-droplet.</span>
+<span class="ja">超水滴法では、同じ格子内の超水滴の組がある確率で衝突します。衝突したときの更新規則を試せます（Shima et al., 2009）。点1つが実際の液滴1個、枠1つが超水滴1個です。</span>
+</p>
+</div>
+<div class="toy card" id="toy">
+<div class="toy-stage" id="toy-stage" aria-live="polite"></div>
+<div class="toy-side">
+<div class="toy-presets" role="group" aria-label="Start / 初期状態">
+<button type="button" class="chip-btn" data-preset="unequal"><span class="bi-inline"><span class="en">ξ 6 and 2</span><span class="ja">ξ 6 と 2</span></span></button>
+<button type="button" class="chip-btn" data-preset="equal"><span class="bi-inline"><span class="en">ξ 4 and 4</span><span class="ja">ξ 4 と 4</span></span></button>
+<button type="button" class="chip-btn" data-preset="many"><span class="bi-inline"><span class="en">ξ 9 and 3</span><span class="ja">ξ 9 と 3</span></span></button>
+</div>
+<button type="button" class="btn btn-primary" id="toy-collide"><span class="bi-inline"><span class="en">Collide</span><span class="ja">衝突させる</span></span></button>
+<div class="toy-rule" id="toy-rule"></div>
+<dl class="toy-check" id="toy-check"></dl>
+</div>
+</div>
+</div>
+</section>
+<section class="section" id="learn" aria-labelledby="learn-h">
+<div class="wrap">
+<div class="section-head">
+<div class="eyebrow">03 · Learn</div>
+<h2 id="learn-h" class="bi h-bi"><span class="en">Until the next edition</span><span class="ja">次回までに</span></h2>
+</div>
+<div class="learn-grid">
+<a class="learn-card card" href="https://scale.riken.jp/" target="_blank" rel="noopener">
+<span class="learn-k">SCALE</span>
+<span class="bi"><span class="en">The atmospheric model SCALE-RM: documents and user's guide (RIKEN R-CCS).</span><span class="ja">大気モデル SCALE-RM のドキュメントとユーザーズガイド（理研 R-CCS）。</span></span>
+</a>
+<a class="learn-card card" href="https://github.com/Shima-Lab" target="_blank" rel="noopener">
+<span class="learn-k">GitHub</span>
+<span class="bi"><span class="en">SCALE-SDM code from published studies (Shima-Lab).</span><span class="ja">論文で使用した SCALE-SDM のコード（Shima-Lab）。</span></span>
+</a>
+<a class="learn-card card" href="https://doi.org/10.1002/qj.441" target="_blank" rel="noopener">
+<span class="learn-k">Shima et al. (2009)</span>
+<span class="bi"><span class="en">The super-droplet method. <i>Q. J. R. Meteorol. Soc.</i>, 135, 1307–1320.</span><span class="ja">超水滴法の原論文。<i>Q. J. R. Meteorol. Soc.</i>, 135, 1307–1320.</span></span>
+</a>
+<a class="learn-card card" href="https://doi.org/10.5194/gmd-13-4107-2020" target="_blank" rel="noopener">
+<span class="learn-k">Shima et al. (2020)</span>
+<span class="bi"><span class="en">Ice particle morphology with SCALE-SDM. <i>Geosci. Model Dev.</i>, 13, 4107–4157.</span><span class="ja">SCALE-SDM による氷粒子の形状予測。<i>Geosci. Model Dev.</i>, 13, 4107–4157.</span></span>
+</a>
+</div>
+</div>
+</section>
+<section class="section alt" id="ideas" aria-labelledby="ideas-h">
+<div class="wrap">
+<div class="ideas card">
 <div>
-<div class="prose" id="about-body"></div>
-<ul class="audience" id="audience"></ul>
+<div class="eyebrow">04 · Ideas</div>
+<h2 id="ideas-h" class="bi h-bi"><span class="en">Help us shape the 3rd edition</span><span class="ja">第3回をいっしょにつくりましょう</span></h2>
+<ul class="ideas-list">
+<li class="bi"><span class="en">A topic you would like a lecture on</span><span class="ja">講義で取り上げてほしいテーマ</span></li>
+<li class="bi"><span class="en">A case you would like to run (a storm, a region, a season)</span><span class="ja">計算してみたい事例（現象・地域・季節）</span></li>
+<li class="bi"><span class="en">The format: online only, a longer hands-on, a different time of year</span><span class="ja">形式（オンラインのみ、実習を長めに、開催時期など）</span></li>
+<li class="bi"><span class="en">Something that did not work for you last time</span><span class="ja">前回うまくいかなかったこと</span></li>
+</ul>
 </div>
-<figure class="card figure about-fig">
-<svg class="sdm-svg" viewBox="0 0 360 486" role="img" aria-labelledby="sdm-fig-t sdm-fig-d">
-<title id="sdm-fig-t">How SCALE-SDM works / SCALE-SDM のしくみ</title>
-<desc id="sdm-fig-d">SCALE-RM computes the air flow on an Eulerian grid. Cloud droplets are Lagrangian super-droplets, each with a position, radius, multiplicity (the number of real droplets it stands for) and aerosol mass.</desc>
-<text x="24" y="22" class="t-strong en" font-size="14">Eulerian grid · SCALE-RM</text>
-<text x="24" y="39" class="t-strong ja" font-size="13" style="--dy:-17px">オイラー格子（SCALE-RM）</text>
-<text x="24" y="57" class="t-muted en" font-size="11.5">wind, temperature, vapor in each cell</text>
-<text x="24" y="71" class="t-muted ja" font-size="11" style="--dy:-14px">各格子に風・温位・水蒸気</text>
-<rect x="180" y="134" width="52" height="52" class="cell-hl" stroke-width="1.5"/>
-<g class="grid-line" stroke-width="1"><path d="M24 82H336M24 134H336M24 186H336M24 238H336M24 82V238M76 82V238M128 82V238M180 82V238M232 82V238M284 82V238M336 82V238" fill="none"/></g>
-<g class="sd"><circle cx="41" cy="110" r="2.4"/><circle cx="64" cy="107" r="3.2"/><circle cx="35" cy="143" r="4.2"/><circle cx="49" cy="162" r="2.2"/><circle cx="67" cy="211" r="4.2"/><circle cx="52" cy="209" r="4.2"/><circle cx="90" cy="113" r="4.2"/><circle cx="116" cy="104" r="2"/><circle cx="108" cy="145" r="4.2"/><circle cx="118" cy="144" r="4.2"/><circle cx="86" cy="224" r="2.8"/><circle cx="105" cy="226" r="2.8"/><circle cx="161" cy="122" r="2.8"/><circle cx="162" cy="111" r="2.2"/><circle cx="167" cy="146" r="2.2"/><circle cx="154" cy="152" r="3.6"/><circle cx="152" cy="216" r="2.4"/><circle cx="151" cy="223" r="3.2"/><circle cx="201" cy="111" r="3.2"/><circle cx="197" cy="102" r="2"/><circle cx="218" cy="229" r="3.6"/><circle cx="213" cy="219" r="2.4"/><circle cx="274" cy="122" r="3.2"/><circle cx="245" cy="113" r="3.6"/><circle cx="269" cy="163" r="2.4"/><circle cx="245" cy="159" r="3.6"/><circle cx="275" cy="198" r="4.2"/><circle cx="243" cy="226" r="2"/><circle cx="303" cy="117" r="4.2"/><circle cx="297" cy="112" r="4.2"/><circle cx="295" cy="167" r="2.4"/><circle cx="312" cy="174" r="2.4"/><circle cx="310" cy="229" r="2.4"/><circle cx="293" cy="199" r="3.2"/><circle cx="192" cy="150" r="3.2"/><circle cx="218" cy="160" r="2.4"/><circle cx="200" cy="172" r="5"/><circle cx="222" cy="178" r="2.2"/><circle cx="188" cy="178" r="2"/></g>
-<path d="M180 186L24 262M232 186L336 262" class="arrow" stroke-dasharray="4 4" stroke-width="1.2"/>
-<rect x="24" y="262" width="312" height="212" rx="12" class="panel"/>
-<text x="40" y="287" class="t-strong en" font-size="14">Lagrangian super-droplet</text>
-<text x="40" y="303" class="t-strong ja" font-size="13" style="--dy:-16px">ラグランジュ的な超水滴</text>
-<text x="40" y="321" class="t-muted en" font-size="11.5">one particle = ξ real droplets alike</text>
-<text x="40" y="335" class="t-muted ja" font-size="11" style="--dy:-14px">1粒子 = 同じ属性の実液滴 ξ 個</text>
-<circle cx="86" cy="410" r="32" class="sd-halo"/>
-<circle cx="86" cy="410" r="19" class="sd"/>
-<g font-size="12.5">
-<text x="142" y="360" class="t-mono t-strong">x</text><text x="162" y="360" class="en">position</text><text x="162" y="374" class="ja t-muted" font-size="10.5" style="--dy:-14px">位置</text>
-<text x="142" y="390" class="t-mono t-strong">R</text><text x="162" y="390" class="en">radius</text><text x="162" y="404" class="ja t-muted" font-size="10.5" style="--dy:-14px">半径</text>
-<text x="142" y="420" class="t-mono t-strong">ξ</text><text x="162" y="420" class="en">multiplicity</text><text x="162" y="434" class="ja t-muted" font-size="10.5" style="--dy:-14px">多重度（実液滴の数）</text>
-<text x="142" y="450" class="t-mono t-strong">M</text><text x="162" y="450" class="en">aerosol (solute) mass</text><text x="162" y="464" class="ja t-muted" font-size="10.5" style="--dy:-14px">エアロゾル（溶質）質量</text>
-</g>
-</svg>
-</figure>
-</div>
-<div class="refs" id="references"></div>
-</div>
-</section>
-<section class="section alt" id="program" aria-labelledby="program-h">
-<div class="wrap">
-<div class="section-head">
-<div class="eyebrow">02 · Program</div>
-<h2 id="program-h" class="bi h-bi"><span class="en">Two days: learn, then build your own case</span><span class="ja">2日間：講義で学び、自分のケースを作る</span></h2>
-</div>
-<div id="program-body"></div>
-</div>
-</section>
-<section class="section" id="organizers" aria-labelledby="organizers-h">
-<div class="wrap">
-<div class="section-head">
-<div class="eyebrow">03 · Organizers</div>
-<h2 id="organizers-h" class="bi h-bi"><span class="en">MS8 SDM Foundational Unit</span><span class="ja">MS8 超水滴法基盤ユニット</span></h2>
-</div>
-<div id="people"></div>
-</div>
-</section>
-<section class="section alt" id="register" aria-labelledby="register-h">
-<div class="wrap">
-<div class="section-head">
-<div class="eyebrow">04 · Registration</div>
-<h2 id="register-h" class="bi h-bi"><span class="en">Register</span><span class="ja">参加登録</span></h2>
-<div class="lead" id="register-lead"></div>
-</div>
-<div class="reg-wrap">
-<aside class="reg-aside" id="reg-aside"></aside>
-<div id="reg-main"></div>
+<div class="ideas-cta">
+<a class="btn btn-primary" id="ideas-mail" href="#ideas" data-mail-subject="SCALE-SDM tutorial: idea for the 3rd edition"><span class="bi-inline"><span class="en">E-mail us</span><span class="ja">メールで送る</span></span></a>
+<p class="ideas-addr" id="ideas-addr"></p>
 </div>
 </div>
-</section>
-<section class="section" id="prepare" aria-labelledby="prepare-h">
-<div class="wrap">
-<div class="section-head">
-<div class="eyebrow">05 · Prepare</div>
-<h2 id="prepare-h" class="bi h-bi"><span class="en">Before you come</span><span class="ja">事前準備</span></h2>
-</div>
-<div class="grid-2">
-<div>
-<div class="check-meta"><span id="check-count"></span><span class="bi-inline"><span class="en">saved in this browser</span><span class="ja">このブラウザに保存</span></span></div>
-<div class="check-progress" aria-hidden="true"><i id="check-bar"></i></div>
-<ul class="checklist" id="checklist"></ul>
-</div>
-<div>
-<h3 class="bi" style="font-size:1.15rem;font-weight:800;margin-bottom:14px"><span class="en">Key dates</span><span class="ja">主な日程</span></h3>
-<ol class="dates" id="key-dates"></ol>
-</div>
-</div>
-</div>
-</section>
-<section class="section alt" id="venue" aria-labelledby="venue-h">
-<div class="wrap">
-<div class="section-head">
-<div class="eyebrow">06 · Venue</div>
-<h2 id="venue-h" class="bi h-bi"><span class="en">Venue &amp; access</span><span class="ja">会場・アクセス</span></h2>
-</div>
-<div class="venue-grid" id="venue-body"></div>
-</div>
-</section>
-<section class="section" id="faq" aria-labelledby="faq-h">
-<div class="wrap">
-<div class="section-head">
-<div class="eyebrow">07 · FAQ</div>
-<h2 id="faq-h" class="bi h-bi"><span class="en">Frequently asked questions</span><span class="ja">よくある質問</span></h2>
-</div>
-<div class="faq" id="faq-body"></div>
-</div>
-</section>
-<section class="section alt" id="editions" aria-labelledby="editions-h">
-<div class="wrap">
-<div class="section-head">
-<div class="eyebrow">08 · Editions</div>
-<h2 id="editions-h" class="bi h-bi"><span class="en">All editions</span><span class="ja">これまでの開催</span></h2>
-</div>
-<div class="archive" id="archive"></div>
 </div>
 </section>
 <section class="support" id="support" aria-labelledby="support-h">
 <div class="wrap">
-<h2 class="eyebrow" id="support-h"><span class="bi-inline"><span class="en" lang="en">Supported by</span><span class="ja" lang="ja">支援</span></span></h2>
+<div class="eyebrow" id="support-h"><span class="bi-inline"><span class="en">Supported by</span><span class="ja">支援</span></span></div>
 <div id="support-body"></div>
 </div>
 </section>
-<noscript>
-<div class="wrap" style="padding:32px 0">
-<p><strong>2nd SCALE-SDM Hands-on Tutorial</strong> — 26–27 October 2026, University of Hyogo (Kobe) and online.
-This page needs JavaScript to show the program and registration form. Questions: manhal.alhilali [at] gsis.u-hyogo.ac.jp</p>
-<p><strong>第2回 SCALE-SDM ハンズオン講習会</strong> — 2026年10月26日（月）・27日（火）、兵庫県立大学（神戸）およびオンライン。
-プログラムと参加登録フォームの表示には JavaScript が必要です。</p>
-</div>
-</noscript>
 </main>
 <footer class="site-footer" id="footer"></footer>
-<div class="toast" id="toast" role="status" aria-live="polite"></div>
 </body>
 </html>
